@@ -27,7 +27,7 @@ const object_traversal = new Traversal(data);
 ```
 
 ### value()
-	get the final value when finished traversing the data.
+get the final value when finished traversing the data.
 	
 ### find(key:string)
 Find the first occurrence of the key.
