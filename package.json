@@ -1,7 +1,7 @@
 {
-  "name": "object_traversal",
+  "name": "@marilyn.m/object-traversal",
   "version": "1.0.0",
-  "description": "",
+  "description": "Search through a JSON object for keys that exists in a collection or collect specific keys to group in a new collection.",
   "main": "index.js",
   "directories": {
     "test": "test"
@@ -9,12 +9,20 @@
   "scripts": {
     "test": "jest"
   },
-  "author": "",
+  "author": "Marilyn Morales <hi@marilynmorales.com>",
+  "bugs": {
+    "url": "https://github.com/marilynmorales/object_traversal/issues"
+  },
+  "homepage": "https://github.com/marilynmorales/object_traversal",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
     "babel-jest": "^26.6.3",
     "jest": "^26.6.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marilynmorales/object_traversal.git"
   }
 }

@@ -48,7 +48,7 @@ object_traversal.find("type").value();
 	{ name: "Champurrado", type: "chocolate" }
 ]
 */
-object_traversal.find("name").value();
+object_traversal.findAll("name").value();
 ```
 
 ### get(key:string)
