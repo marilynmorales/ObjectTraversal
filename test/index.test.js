@@ -59,9 +59,9 @@ describe("find()", () => {
   });
 });
 
-describe("findSome()", () => {
+describe("findN()", () => {
   test("it should find a set number of items", () => {
-    let found = load.findSome("first_name", 3).value();
+    let found = load.findN("first_name", 3).value();
     let expecting = [
       schema[0].person, 
       schema[1].person, 

@@ -14,7 +14,7 @@ class ObjectTraversal {
     return new this.constructor(origin);
   }
   
-  findSome(key, limit=null) {
+  findN(key, limit=null) {
     const origin = util.find(key, this.origin, limit);
     return new this.constructor(origin);
   }

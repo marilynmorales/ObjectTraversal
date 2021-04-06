@@ -51,7 +51,7 @@ object_traversal.find("type").value();
 object_traversal.findAll("name").value();
 ```
 
-### findSome(key:string, limit:number|null)
+### findN(key:string, limit:number|null)
 ```javascript
 /*
 [
@@ -60,7 +60,7 @@ object_traversal.findAll("name").value();
 	{ name: "Milky Way", type: "chocolate" },
 ]
 */
-object_traversal.findSome("name", 3).value();
+object_traversal.findN("name", 3).value();
 ```
 
 ### get(key:string)
