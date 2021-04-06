@@ -1,6 +1,6 @@
 {
   "name": "@marilyn.m/object-traversal",
-  "version": "1.3.4",
+  "version": "1.3.5",
   "description": "Search through a JSON object for keys that exists in a collection or collect specific keys to group in a new collection.",
   "main": "index.js",
   "directories": {
