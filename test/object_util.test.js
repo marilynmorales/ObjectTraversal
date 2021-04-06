@@ -1,6 +1,6 @@
 const util = require("../src/object_util");
 let prop = {};
-
+let prop_2 = {}
 beforeEach(() => {
   prop = {
     person: "Marilyn",
@@ -20,7 +20,62 @@ beforeEach(() => {
         }
       ]
     }
-  }
+  };
+  prop_2 = {
+    "group_1": {
+      "leaders": [
+        {
+          "name": "Woodrow Lambert"
+        },
+        {
+          "name": "Bonnie Burke"
+        }
+      ],
+      "members": [
+        {
+          "name": "Tanya Mckinney",
+          "level": "junior"
+        },
+        {
+          "name": "Kristi Sparks",
+          "level": "expert"
+        },
+        {
+          "name": "Wilma Hunt",
+          "level": "junior"
+        }
+      ]
+    },
+    "group_2": {
+      "leaders": [
+        {
+          "name": "Neal Cook"
+        }
+      ],
+      "members": [
+        {
+          "name": "Erika Rivera",
+          "level": "expert"
+        },
+        {
+          "name": "Agnes Hall",
+          "level": "junior"
+        },
+        {
+          "name": "Kenneth Carlson",
+          "level": "novice"
+        },
+        {
+          "name": "Allison Carlson",
+          "level": "expert"
+        },
+        {
+          "name": "Laurence Allison",
+          "level": "expert"
+        }
+      ]
+    }
+  };
 });
 
 test("isObject() - it should return true for objects only", () => {
@@ -91,20 +146,26 @@ test("get() - recursively get all values from json data", () => {
   expect(util.get("type", prop)).toEqual(expect.arrayContaining(["dog", "bone", "stuffed"]))
 });
 
-test("find() - recursively get all keys from json data", () => {
-  let expecting = [
-   {...prop},
-   {...prop.people[0]},
-   {...prop.people[1]},
-   {...prop.leader}
-  ]
-  expect(util.find("person", prop)).toEqual(expect.arrayContaining(expecting))
+describe("find()", () => {
+  test("recursively get all keys from json data", () => {
+    let expecting = [
+     {...prop},
+     {...prop.people[0]},
+     {...prop.people[1]},
+     {...prop.leader}
+    ]
+    expect(util.find("person", prop)).toEqual(expect.arrayContaining(expecting))
 
-  let expecting_type = [
-    {...prop.leader},
-    ...prop.leader.toys
-  ];
-  expect(util.find("type", prop)).toEqual(expect.arrayContaining(expecting_type));
-  expect(util.find("not_exist", prop)).toHaveLength(0)
+    let expecting_type = [
+      {...prop.leader},
+      ...prop.leader.toys
+    ];
+    expect(util.find("type", prop)).toEqual(expect.arrayContaining(expecting_type));
+    expect(util.find("not_exist", prop)).toHaveLength(0)
+  });
+  test("get a limit number of keys", () => {
+    const found = util.find("level", prop_2, 3, "expert");
+    const levels = found.filter(i => i.level === "expert");
+    expect(levels).toHaveLength(3);
+  });
 });
-
