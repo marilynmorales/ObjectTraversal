@@ -107,7 +107,6 @@ describe("where()", () => {
       schema[0].person,
       schema[1].person
     ];
-    console.log(found)
     expect(expecting).toEqual(expect.arrayContaining(found))
     expect([]).not.toEqual(expect.arrayContaining(found))
   });
