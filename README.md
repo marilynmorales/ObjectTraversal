@@ -60,7 +60,7 @@ object_traversal.findAll("name").value();
 	{ name: "Milky Way", type: "chocolate" },
 ]
 */
-object_traversal.findSome("name").value();
+object_traversal.findSome("name", 3).value();
 ```
 
 ### get(key:string)
