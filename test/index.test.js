@@ -30,7 +30,7 @@ const schema = [
         }
       }
     ]
-  } 
+  }
 ];
 const load = new Traversal(schema);
 
@@ -102,10 +102,12 @@ describe("where()", () => {
   });
   
   test("it should get limited items where key exists", () => {
-    let found = load.where("last_name", "Morales", 1).value();
+    let found = load.where("last_name", "Morales", 2).value();
     let expecting = [
-      schema[0].person
+      schema[0].person,
+      schema[1].person
     ];
+    console.log(found)
     expect(expecting).toEqual(expect.arrayContaining(found))
     expect([]).not.toEqual(expect.arrayContaining(found))
   });

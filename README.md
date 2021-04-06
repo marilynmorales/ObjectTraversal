@@ -94,7 +94,7 @@ object_traversal.first("drinks").value()
 ]
 */
 object_traversal.where("type").value()
-````
+```
 
 ### where(key:string, value:string)
 ```javascript
@@ -104,6 +104,7 @@ object_traversal.where("type").value()
   { name: "Champurrado", type: "chocolate" }
 ]
 */
+```
 
 ### where(key:string, value:string, limit:string|null)
 ```javascript
@@ -113,6 +114,6 @@ object_traversal.where("type").value()
 ]
 */
 object_traversal.where("type", "chocolate", 1).value()
-````
+```
 
 
