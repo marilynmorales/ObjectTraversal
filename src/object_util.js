@@ -71,26 +71,31 @@ class ObjectUtil {
     return keys;
   }
   
-  find(key, prop, limit = 0, value) {
-    let keys = this.push(key, prop, value);
+  
+  find(key, prop, limit = null, value) { 
+    let found = 0;
+    
+    const search = (key, prop, value) => {
+      let keys = this.push(key, prop, value);
+      if(keys.length > 0) {
+        ++found;
+      }
+      
+      if(limit !== null && found >= limit) return keys;
 
-    if(this.isArray(prop) || this.isObject(prop)) {
-      for(var i in prop) {
-        //let is_object = this.isObject(prop[i]),
-        let is_object = true,
-          limit_reached = limit > 0 && is_object && keys.length < 1,
-          has_no_limit = is_object && limit === 0;
-        if( has_no_limit || limit_reached ) {
-          const n_keys = this.find(key, prop[i], limit, value);
+      if(this.isArray(prop) || this.isObject(prop)) {
+        for(var i in prop) {
+          let is_object = true;
+          const n_keys = search(key, prop[i], value);
           if(n_keys.length > 0) {
             this.pushMany(n_keys, keys);
           }
         }
-
       }
+      return keys;
     }
-
-    return keys;
+    
+    return search(key, prop, value);
   }
 };
 

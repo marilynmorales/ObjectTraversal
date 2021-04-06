@@ -59,6 +59,18 @@ describe("find()", () => {
   });
 });
 
+describe("findSome()", () => {
+  test("it should find a set number of items", () => {
+    let found = load.findSome("first_name", 3).value();
+    let expecting = [
+      schema[0].person, 
+      schema[1].person, 
+      schema[2].people[0].person
+    ];
+    expect(expecting).toEqual(expect.arrayContaining(found));
+  });
+});
+
 describe("findAll()", () => {
   test("it should return array of found items", () => {
     let found = load.findAll("first_name").value();

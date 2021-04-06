@@ -14,15 +14,18 @@ class ObjectTraversal {
     return new this.constructor(origin);
   }
   
+  findSome(key, limit = 1) {
+    const origin = util.find(key, this.origin, limit);
+    return new this.constructor(origin);
+  }
+  
   findAll(key) {
-    const keys = util.find(key, this.origin);
-    let origin = keys;
+    const origin = util.find(key, this.origin);
     return new this.constructor(origin);
   }
   
   where(key, value) {
-    const keys = util.find(key, this.origin, 0, value);
-    let origin = keys;
+    const origin = util.find(key, this.origin, null, value);
     return new this.constructor(origin);
   }
 
