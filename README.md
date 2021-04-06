@@ -104,7 +104,15 @@ object_traversal.where("type").value()
   { name: "Champurrado", type: "chocolate" }
 ]
 */
-object_traversal.where("type", "chocolate").value()
+
+### where(key:string, value:string, limit:string|null)
+```javascript
+/*
+[
+  { name: "Milky Way", type: "chocolate" },
+]
+*/
+object_traversal.where("type", "chocolate", 1).value()
 ````
 
 

@@ -100,6 +100,16 @@ describe("where()", () => {
     expect(expecting).toEqual(expect.arrayContaining(found))
     expect([]).not.toEqual(expect.arrayContaining(found))
   });
+  
+  test("it should get limited items where key exists", () => {
+    let found = load.where("last_name", "Morales", 1).value();
+    let expecting = [
+      schema[0].person
+    ];
+    expect(expecting).toEqual(expect.arrayContaining(found))
+    expect([]).not.toEqual(expect.arrayContaining(found))
+  });
+
 
   test("it should get items where key and value exists", () => {
     let found = load.where("email", "bark@marilynmorales.com").value();

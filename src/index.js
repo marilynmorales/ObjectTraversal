@@ -24,8 +24,8 @@ class ObjectTraversal {
     return new this.constructor(origin);
   }
   
-  where(key, value) {
-    const origin = util.find(key, this.origin, null, value);
+  where(key, value, limit = null) {
+    const origin = util.find(key, this.origin, limit, value);
     return new this.constructor(origin);
   }
 
