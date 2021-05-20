@@ -11,9 +11,9 @@
   },
   "author": "Marilyn Morales <hi@marilynmorales.com>",
   "bugs": {
-    "url": "https://github.com/marilynmorales/object_traversal/issues"
+    "url": "https://github.com/marilynmorales/object-traversal/issues"
   },
-  "homepage": "https://github.com/marilynmorales/object_traversal",
+  "homepage": "https://github.com/marilynmorales/object-traversal",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.13.14",
