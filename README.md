@@ -2,6 +2,7 @@
 ### Create New
 #### Test Schema
 ```javascript
+const Traversal = require("@marilyn.m/object-traversal");
 const data = {
 	candies: [
 		{
